@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <title>CSS Grid Animation Playground</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">CSS MOTION PLAYGROUND</p>
+      <h1>CSS Grid Animation</h1>
+      <p class="subtitle">Five animated grid interactions, recreated with pure CSS and JavaScript.</p>
+    </header>
+
+    <section class="examples" aria-label="CSS grid animation examples">
+      <article class="example">
+        <div class="example-heading"><span class="index">01</span><div><h2>Ripple Effect</h2><p>Grid cells pulse outward in sequence</p></div></div>
+        <div class="demo-area"><div class="grid ripple-grid" aria-label="Ripple grid"></div></div>
+        <pre><code>.ripple div {
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}</code></pre>
+      </article>
+
+      <article class="example">
+        <div class="example-heading"><span class="index">02</span><div><h2>Snake Motion</h2><p>A moving wave travels across the grid</p></div></div>
+        <div class="demo-area"><div class="grid snake-grid" aria-label="Snake motion grid"></div></div>
+        <pre><code>.snake div {
+  animation: snake 1s infinite;
+}
+
+@keyframes snake {
+  50% {
+    transform: translateX(15px);
+  }
+}</code></pre>
+      </article>
+
+      <article class="example">
+        <div class="example-heading"><span class="index">03</span><div><h2>3D Flip</h2><p>Each tile rotates in three dimensions</p></div></div>
+        <div class="demo-area"><div class="grid flip-grid" aria-label="3D flip grid"></div></div>
+        <pre><code>.flip div {
+  animation: flip 1.2s infinite;
+}
+
+@keyframes flip {
+  50% {
+    transform: rotateY(180deg);
+  }
+}</code></pre>
+      </article>
+
+      <article class="example">
+        <div class="example-heading"><span class="index">04</span><div><h2>Bounce Grid</h2><p>Tiles bounce vertically with staggered timing</p></div></div>
+        <div class="demo-area"><div class="grid bounce-grid" aria-label="Bounce grid"></div></div>
+        <pre><code>.bounce div {
+  animation: bounce 0.8s infinite;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-25px);
+  }
+}</code></pre>
+      </article>
+
+      <article class="example">
+        <div class="example-heading"><span class="index">05</span><div><h2>Mouse 3D Tilt</h2><p>Move your pointer over the tiles</p></div></div>
+        <div class="demo-area perspective">
+          <div class="grid tilt-grid" aria-label="Interactive 3D tilt grid"></div>
+        </div>
+        <pre><code>.tilt {
+  perspective: 500px;
+}
+
+.tilt div {
+  transition: transform 0.2s;
+}</code></pre>
+      </article>
+    </section>
+    <footer><span>PURE HTML · CSS · JAVASCRIPT</span><span>5 GRID EFFECTS</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
